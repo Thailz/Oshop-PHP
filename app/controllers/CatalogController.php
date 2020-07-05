@@ -4,16 +4,26 @@
     {
         public function category( $params )
         {
+            $category = new Category( $params['category_id'] );
+
+            ///dump( $product );
             $this->_show( "category" );
         }
 
         public function brand( $params )
         {
+            $brand = new Brand( $params['brand_id'] );
+
+            //dump( $product );
             $this->_show( "brand" );
         }
 
         public function type( $params )
         {
+
+            $type = new Type( $params['type_id'] );
+
+            //dump( $product );
             $this->_show( "type" );
         }
 
