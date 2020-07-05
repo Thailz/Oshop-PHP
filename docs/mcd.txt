@@ -1,0 +1,8 @@
+BRAND: name, picture, order, created_at, updated_at
+made, 0N BRAND, 11 PRODUCT
+PRODUCT: name, description, price, picture, availability, created_at, updated_at
+is tagged as, 11 PRODUCT, 0N CATEGORY
+CATEGORY : title, subtitle, picture, order, created_at, updated_at
+
+TYPE: name, description, picture, order, created_at, updated_at
+is a, 0N TYPE, 11 PRODUCT 
