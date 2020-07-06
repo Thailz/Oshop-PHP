@@ -16,11 +16,10 @@ require_once __DIR__ . "/../app/controllers/MainController.php";
 // Require CatalogController
 require_once __DIR__ . "/../app/controllers/CatalogController.php";
 
-// Require Models/Product
-require_once __DIR__ . "/../app/models/product.php";
-require_once __DIR__ . "/../app/models/category.php";
-require_once __DIR__ . "/../app/models/type.php";
-require_once __DIR__ . "/../app/models/brand.php";
+// Require Models
+require_once __DIR__ . "/../app/models/CoreModel.php";
+require_once __DIR__ . "/../app/models/Product.php";
+require_once __DIR__ . "/../app/models/Brand.php";
 
 // On veut se connecter à notre base de données
 // Pour garder notre code d'index "léger", on va déplacer cette connexion dans 

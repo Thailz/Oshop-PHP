@@ -1,12 +1,12 @@
 <?php
 
-    // Entité Type : Marque
+    // Entité Type : Type de chaussure
     class Type extends CoreModel
     {
-        // On "écrase" la valeur du parent pour spécifier 
-        // la table utilisée en BDD par ce model
+        // Table BDD
         private $table = "type";
 
+        // Propriété spécifique à Brand
         private $order;
 
         // Getters
