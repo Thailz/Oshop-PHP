@@ -2,38 +2,40 @@
 
     class CatalogController 
     {
-        public function category( $params )
-        {
-            $this->_show( "category" );
-        }
-
         public function brand( $params )
         {
-            $this->_show( "brand" );
+            // On récupère notre marque grace au model Brand
+            $brand = Brand::find( $params['brand_id'] );
+
+            // On a ici un objet de type Brand
+            //   dump( $brand );
+            
+            // On a récupéré notre produit dans $brand, il faut 
+            // maintenant le passer à la vue !
+            $this->_show( "brand", [ "brand" => $brand ] );
+        }
+
+        public function category( $params )
+        {
+            // TODO : Faire pareil pour une catégorie
+            $this->_show( "category", [] );
         }
 
         public function type( $params )
         {
-            $this->_show( "type" );
+            // TODO : Faire pareil pour le type
+            $this->_show( "type", [] );
         }
 
         // Dans $params, on va récupérer $match['params']
         public function product( $params )
         {
-            // J'arrive ici quand je demande une page de produit
-            // C'est donc ici que je vais instancier mon Model
-            // et ainsi créer mon objet "Product" avec ses informations 
-            // récupérées depuis la base de données
-            $product = new Product( $params['product_id'] );
-
-            dump( $product );
-
-            // J'affiche la vue
-            $this->_show( "product" );
+            // TODO : Faire pareil pour un produit
+            $this->_show( "product", [] );
         }
 
         // méthode show
-        private function _show($viewName, $viewData = [])
+        private function _show( $viewName, $viewData = [] )
         {   
             // on définit cette variable pour que nos vues puissent mettre le lien de la page courante en avant
             // Toutes nos données dynamiques à utiliser dans les vues se trouveront dans $viewData (par souci de simplification)

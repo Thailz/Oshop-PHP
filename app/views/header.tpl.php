@@ -50,13 +50,13 @@
               <a href="<?= BASE_URI ?>" class="nav-link active">Home</a>
             </li>
             <li class="nav-item">
-              <a href="<?= BASE_URI ?>/category" class="nav-link">Catégories</a>
+              <a href="<?= BASE_URI ?>/catalog/category/1" class="nav-link">Catégories</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">Types de produit</a>
+              <a href="<?= BASE_URI ?>/catalog/type/1" class="nav-link">Types de produit</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">Marques</a>
+              <a href="<?= BASE_URI ?>/catalog/brand/1" class="nav-link">Marques</a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">Blog</a>
