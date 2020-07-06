@@ -18,20 +18,23 @@
         public function category( $params )
         {
             // TODO : Faire pareil pour une catégorie
-            $this->_show( "category", [] );
+            $category = Category::find( $params['category_id'] );
+            $this->_show( "category" , ["category" => $category] );
         }
 
         public function type( $params )
         {
             // TODO : Faire pareil pour le type
-            $this->_show( "type", [] );
+            $type = Type::find( $params['type_id'] );
+            $this->_show( "type", ["type" => $type] );
         }
 
         // Dans $params, on va récupérer $match['params']
         public function product( $params )
         {
             // TODO : Faire pareil pour un produit
-            $this->_show( "product", [] );
+            $product = Product::find( $params['product_id'] );
+            $this->_show( "product", ["product" => $product] );
         }
 
         // méthode show

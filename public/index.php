@@ -20,6 +20,9 @@ require_once __DIR__ . "/../app/controllers/CatalogController.php";
 require_once __DIR__ . "/../app/models/CoreModel.php";
 require_once __DIR__ . "/../app/models/Product.php";
 require_once __DIR__ . "/../app/models/Brand.php";
+require_once __DIR__ . "/../app/models/Category.php";
+require_once __DIR__ . "/../app/models/Type.php";
+
 
 // On veut se connecter à notre base de données
 // Pour garder notre code d'index "léger", on va déplacer cette connexion dans 

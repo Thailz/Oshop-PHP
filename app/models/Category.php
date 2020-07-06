@@ -1,7 +1,7 @@
 <?php
 
     // Entité Category : Catégorie
-    class Category
+    class Category extends CoreModel
     {
         // Table BDD
         protected static $table = "category";

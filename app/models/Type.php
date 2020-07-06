@@ -4,7 +4,7 @@
     class Type extends CoreModel
     {
         // Table BDD
-        private $table = "type";
+        protected static  $table = "type";
 
         // Propriété spécifique à Brand
         private $order;
