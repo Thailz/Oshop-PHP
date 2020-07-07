@@ -39,15 +39,24 @@
                 "footerTypes"  => $footerTypes
             ];
 
+            // ATTENTION : Sur Linux, le nom des classes est sensible à la casse
+            // on avait pas ce problème sur le livecode car je suis sur Windows ;x
+            // La solution est de mettre en majuscule le premier caractère de notre chaine
+            // Heureusement, PHP a précisément une fonction qui fait ça : ucfirst
+            // Ici, on a donc le nom de notre classe avec la bonne casse (Category, Type, etc...)
+            $modelNameCorrectCase = ucfirst( $modelName );
+
             // Si on arrive ici avec un nom de modèle valide
             // C'est à dire, que la classe de ce nom existe (penser a require !)
             // Alors on procède comme on faisait dans CatalogController
-            if( class_exists( $modelName ) )
+            // /!\ On doit vérifier le nom avec la bonne casse sinon on ne tombera jamais dans le if !
+            if( class_exists( $modelNameCorrectCase ) )
             {
-                // Etape 1 : Instancier le model a récupérer
-                $model = $modelName::find( $params[ $modelName.'_id' ] );
+                // Etape 1 : Instancier le model a récupérer (là aussi avec la bonne casse)
+                $model = $modelNameCorrectCase::find( $params[ $modelName.'_id' ] );
                 // Etape 2 : Plutot que d'appeller _show une deuxième fois, on va juste
                 // ajouter la donnée intéressante au tableau ($viewData) déjà rempli
+                // Ici en revanche, ce n'est pas grave si c'est en minuscule
                 $viewData[$modelName] = $model;
             }
 
