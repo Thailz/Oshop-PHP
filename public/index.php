@@ -11,14 +11,20 @@ spl_autoload_register(
     // On passe une fonction anonyme (comme avec addEventListener en JS)
     function( $nom_classe_introuvable ) 
     {
-        if( $nom_classe_introuvable == "MainController" OR $nom_classe_introuvable == "CatalogController" OR $nom_classe_introuvable == "CoreController" )
-        {
-            require_once __DIR__ . "/../app/controllers/".$nom_classe_introuvable.".php";
-        }
-        else
-        {
-            require_once __DIR__ . "/../app/models/".$nom_classe_introuvable.".php";
-        }
+        // On vérifie que la classe qu'on souhaite charger est un controller...
+        if( $nom_classe_introuvable == "MainController" || $nom_classe_introuvable == "CatalogController" || $nom_classe_introuvable == "CoreController" ) :
+            // On vérifie que le fichier existe avant d'essayer de l'inclure
+            // Si on ne vérifie pas, on aura une erreur a cause du class_exists() dans le CoreController !
+            if( file_exists( __DIR__ . "/../app/controllers/".$nom_classe_introuvable.".php" ) ) :
+                // Si le fichier existe, on le require
+                require_once __DIR__ . "/../app/controllers/".$nom_classe_introuvable.".php";
+            endif;
+        // Sinon, c'est surement que c'est un model
+        else :            
+            if( file_exists( __DIR__ . "/../app/models/".$nom_classe_introuvable.".php" ) ) :
+                require_once __DIR__ . "/../app/models/".$nom_classe_introuvable.".php";
+            endif;            
+        endif;
 
         // C'est bien pratique, mais si il faut lister chaque classe dans un if
         // autant require à la main...
