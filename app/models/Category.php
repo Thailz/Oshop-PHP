@@ -7,9 +7,9 @@
         protected static $table = "category";
 
         // Propriétés spécifiques aux catégories
-        private $subtitle;
-        private $picture;
-        private $order;
+        protected $subtitle;
+        protected $picture;
+        protected $order;
 
         // Getters
         public function getSubtitle()  { return $this->subtitle; }

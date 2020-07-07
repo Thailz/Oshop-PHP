@@ -32,7 +32,7 @@
             // Attention, on peut le faire parce que nos attributs ont le même nom
             // que nos colonnes (de la table products) en BDD
             foreach( $_columnsFromDatabase as $attr_name => $attr_value ) :
-                static::$table = $attr_value;
+                $this->$attr_name = $attr_value;
             endforeach;
             
             // On pourrait aussi faire la correspondance manuellement
