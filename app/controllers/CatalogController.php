@@ -1,50 +1,44 @@
 <?php
 
-    class CatalogController 
+    class CatalogController extends CoreController
     {
-        public function brand( $params )
-        {
-            // On récupère notre marque grace au model Brand
-            $brand = Brand::find( $params['brand_id'] );
+        // Cette méthode va remplacer les 4 en dessous
+        // Elle prends le même paramètre $params ( => $match['params'] )
+        // Mais aussi un deuxième param qui correspond à la fois au nom
+        // du template, et du model à instancier ($modelName)
+        // => Comme c'est la seule méthode qui reste mais qu'elle est
+        // (presque) identique a celle du MainController, on factorise dans CoreController
+        // public function vue( $params, $modelName )
+        // {
+        //     // Etape 1 : Instancier le model a récupérer
+        //     $model = $modelName::find( $params[ $modelName.'_id' ] );
+        //     // Etape 2 : Afficher la vue et lui passer les données
+        //     $this->_show( $modelName, [ $modelName => $model ] );
+        // }
 
-            // On a ici un objet de type Brand
-            //   dump( $brand );
-            
-            // On a récupéré notre produit dans $brand, il faut 
-            // maintenant le passer à la vue !
-            $this->_show( "brand", [ "brand" => $brand ] );
-        }
+        // public function brand( $params )
+        // {
+        //     // On récupère notre marque grace au model Brand
+        //     $brand = Brand::find( $params['brand_id'] );
+        //     $this->_show( "brand", [ "brand" => $brand ] );
+        // }
 
-        public function category( $params )
-        {
-            // TODO : Faire pareil pour une catégorie
-            $this->_show( "category", [] );
-        }
+        // public function category( $params )
+        // {
+        //     $category = Category::find( $params['category_id'] );
+        //     $this->_show( "category", [ "category" => $category ] );
+        // }
 
-        public function type( $params )
-        {
-            // TODO : Faire pareil pour le type
-            $this->_show( "type", [] );
-        }
+        // public function type( $params )
+        // {
+        //     $type = Type::find( $params['type_id'] );
+        //     $this->_show( "type", [ "type" => $type ] );
+        // }
 
-        // Dans $params, on va récupérer $match['params']
-        public function product( $params )
-        {
-            // TODO : Faire pareil pour un produit
-            $this->_show( "product", [] );
-        }
-
-        // méthode show
-        private function _show( $viewName, $viewData = [] )
-        {   
-            // on définit cette variable pour que nos vues puissent mettre le lien de la page courante en avant
-            // Toutes nos données dynamiques à utiliser dans les vues se trouveront dans $viewData (par souci de simplification)
-            $viewData['currentPage'] = $viewName;
-
-            // __DIR__ vaut /var/www/html/S05/..../Controllers
-            require __DIR__ . '/../views/header.tpl.php';
-            // on inclut une vue selon la valeur du paramètre $viewName
-            require __DIR__ . '/../views/' . $viewName . '.tpl.php';
-            require __DIR__ . '/../views/footer.tpl.php';
-        }
+        // // Dans $params, on va récupérer $match['params']
+        // public function product( $params )
+        // {
+        //     $product = Product::find( $params['product_id'] );
+        //     $this->_show( "product", [ "product" => $product ] );
+        // }
     }

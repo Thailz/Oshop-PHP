@@ -3,15 +3,20 @@
       <!-- Breadcrumbs -->
       <ol class="breadcrumb justify-content-center">
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item active">Détente</li>
+        <li class="breadcrumb-item active">
+          <?= $viewData["category"]->getName() ?>
+        </li>
       </ol>
       <!-- Hero Content-->
       <div class="hero-content pb-5 text-center">
-        <h1 class="hero-heading">Détente</h1>
+        <h1 class="hero-heading">
+          <?= $viewData["category"]->getName() ?>
+        </h1>
         <div class="row">
           <div class="col-xl-8 offset-xl-2">
-            <p class="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt.</p>
+            <p class="lead text-muted">
+              <?= $viewData["category"]->getSubtitle() ?>
+            </p>
           </div>
         </div>
       </div>
