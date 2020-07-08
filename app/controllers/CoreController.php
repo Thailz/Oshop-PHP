@@ -48,9 +48,7 @@
                 "allProducts"   => $allProducts,
                 "allCategory"   => $allCategory,
                 "allProducts1"  => $allProducts1
-
-
-
+                
             ];
 
             // ATTENTION : Sur Linux, le nom des classes est sensible à la casse
