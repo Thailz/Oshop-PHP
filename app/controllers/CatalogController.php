@@ -23,11 +23,13 @@
         //     $this->_show( "brand", [ "brand" => $brand ] );
         // }
 
+        
         // public function category( $params )
         // {
+
         //     $category = Category::find( $params['category_id'] );
         //     $this->_show( "category", [ "category" => $category ] );
-        // }
+       // }
 
         // public function type( $params )
         // {

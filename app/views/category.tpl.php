@@ -3,25 +3,45 @@
       <!-- Breadcrumbs -->
       <ol class="breadcrumb justify-content-center">
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <?php foreach( $viewData["allCategory"] as $type ) : ?>
         <li class="breadcrumb-item active">
-          <?= $viewData["category"]->getName() ?>
+        
+          <a href="<?= BASE_URI ?>/catalog/product/<?= $type->getId() ?>" 
+            class="text-muted"
+        >
+          <?= $type->getName(); ?>
+        </a>
         </li>
+        <?php endforeach; ?> 
       </ol>
-      <!-- Hero Content-->
-      <div class="hero-content pb-5 text-center">
-        <h1 class="hero-heading">
-          <?= $viewData["category"]->getName() ?>
-        </h1>
-        <div class="row">
-          <div class="col-xl-8 offset-xl-2">
-            <p class="lead text-muted">
-              <?= $viewData["category"]->getSubtitle() ?>
-            </p>
-          </div>
-        </div>
+              
+              <!-- Hero Content-->
+              <div class="hero-content pb-5 text-center">
+                <h1 class="hero-heading">
+                  <?= $viewData["category"]->getName() ?>
+                </h1>
+                <div class="row">
+                  <div class="col-xl-8 offset-xl-2">
+                    <p class="lead text-muted">
+                      <?= $viewData["category"]->getSubtitle() ?>
+                    </p>
+                  </div>
+                </div>
+               
       </div>
     </div>
   </section>
+  <?php foreach( $viewData["allCategory"] as $type ) : ?>
+                <li>
+                  <a href="<?= BASE_URI ?>/catalog/product/<?= $type->getId() ?>" 
+                     class="text-muted"
+                  >
+                    <?= $type->getName(); ?>
+                  </a>
+                </li>  
+              <?php endforeach; ?>  
+</div>
+
 
   <section class="products-grid">
     <div class="container-fluid">
